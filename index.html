@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>-NoteNest-</title>
+    <link rel="stylesheet" href="./public/output.css">
+    <style>
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-custom-gray text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold ">-Note<span class="text-orange-300 font-thin">Nest</span>-</a>
+            <button class="block lg:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+            <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+                <ul class=" flex gap-2 flex-col lg:flex-row lg:mx-4">
+                    <li>
+                        <a href="#"
+                            class="text-white px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 ">Home</a>
+
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="text-white px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 ">About</a>
+                    </li>
+                    <li ">
+                        <button onclick="myFunction()"
+                            class="dropbtn text-white text-base font-medium flex items-center justify-center gap-1">items <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            width="20px" height="20px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                       <g>
+                           <polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" points="15,24 32,41 
+                               49,24 	"/>
+                       </g>
+                       </svg></button>
+                        <div id="myDropdown"
+                            class="dropdown-content hidden absolute rounded bg-white min-w-14 z-[1] shadow">
+                            <a class="text-black px-3 py-4 block " href="#">Action</a>
+                            <a class="text-black px-3 py-4 block " href="#">Another Action</a>
+                            <hr>
+                            <a class="text-black px-3 py-4 block " href="#">Something else</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+            <form class="flex items-center">
+                <input type="search" placeholder="search" class="text-black mr-2 focus:outline-none placeholder:p-2 rounded focus:cursor-text"
+                    name="" id="">
+                <button class="text-white px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class=" flex justify-center items-center my-4 p-10  ">
+        <div class="w-full">
+            <h2 class="text-center text-3xl mb-4">-Note<span class="text-custom-orange">Nest</span>-</h2>
+            <div class="mb-4">
+                <label for="title"><b>Work</b></label>
+                <input type="text"
+                    class="border-2 mt-1 block w-full focus:ring focus:outline-none focus:border-transparent" id="title"
+                    aria-describedby="workHelp">
+                <small id="workHelp" class=" text-gray-500">Add Your Pending Works Here</small>
+            </div>
+            <div class="form-group mb-4">
+                <label for="description"><b>Your Work Description</b></label>
+                <textarea class=" border-2 mt-1 block w-full focus:ring focus:outline-none focus:border-transparent"
+                    id="description" rows="3"></textarea>
+            </div>
+            <button id="add" class=" bg-custom-dark hover:bg-custom-gray text-white font-bold py-2 px-4 rounded">Add to
+                Your
+                Work Book</button>
+            <button id="clear" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                onclick="clearStorage()">Clear Work Book</button>
+            <div id="items" class="my-6">
+                <h2 class="text-2xl">Work Book :</h2>
+                <table class="table-auto w-full">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2">S. No.</th>
+                            <th class="px-4 py-2">Work</th>
+                            <th class="px-4 py-2">Work Description</th>
+                            <th class="px-4 py-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <th class="border px-4 py-2" scope="row">1</th>
+                            <td class="border px-4 py-2">Coffee</td>
+                            <td class="border px-4 py-2">I am a coder buddy</td>
+                            <td class="border px-4 py-2"><button
+                                    class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./src/js/script.js"></script>
+</body>
+
+
+</html>
