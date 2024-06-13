@@ -96,7 +96,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - Amit kumar - amitroyk99@gmail.com
 
-Project Link: [https://github.com/Amitkr77/NoteNest](https://github.com/your_username/NoteNest)
+Project Link: [https://github.com/Amitkr77/NoteNest](https://notenestt.netlify.app/)
 
 ---
 
