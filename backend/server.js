@@ -6,26 +6,24 @@ import workItemRoutes from './src/routes/workItemRoutes.js';
 import path from "path";
 import { fileURLToPath } from 'url';
 
-// Create an Express application
+// Initialize the Express application
 const app = express();
-const port = 8001;
+const PORT = 8001;
 
 // Get the directory name for the current module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middleware
+// Middleware configuration
 app.use(cors());
 app.use(express.json());
-
-// Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
-// Use routes
+
+// Route configuration
 app.use('/api/profiles', profileRoutes);
 app.use('/api/workitems', workItemRoutes);
 
-// The "catchall" handler: for any request that doesn't match one above,
-// send back React's index.html file.
+// Catch-all handler for React
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
@@ -33,8 +31,7 @@ app.get('*', (req, res) => {
 // Database connection
 db();
 
-
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
