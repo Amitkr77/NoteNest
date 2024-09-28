@@ -27,14 +27,21 @@ export default function WorkBook() {
     const fetchData = async () => {
       try {
         const res = await axios.get("http://localhost:8001/api/workitems");
-        setWorkData(res.data);
+        console.log(res.data); 
+        if (Array.isArray(res.data)) {
+          setWorkData(res.data);
+        } else {
+          console.error("Expected an array but received:", res.data);
+          setWorkData([]); // Handle the unexpected structure
+        }
       } catch (error) {
         console.error("Error in fetching data", error);
+        setWorkData([]); // Prevent errors by setting to empty array
       }
     };
     fetchData();
-    console.log(data);
-  }, [data]); // Added `data` to dependencies if it's changing and needed
+  }, [data]);
+   // Added `data` to dependencies if it's changing and needed
 
   // Function to handle delete action
   const handleDelete = async (id) => {
@@ -79,11 +86,12 @@ export default function WorkBook() {
   };
 
   // Filter workData based on search term
-  const filteredWorkData = workData.filter(
+  const filteredWorkData = Array.isArray(workData) ? workData.filter(
     (item) =>
-      item.title.toLowerCase().includes(search.toLowerCase()) ||
-      item.description.toLowerCase().includes(search.toLowerCase())
-  );
+      (item.title && item.title.toLowerCase().includes(search.toLowerCase())) ||
+      (item.description && item.description.toLowerCase().includes(search.toLowerCase()))
+  ) : [];
+  
 
   return (
     <div id="items" className="p-6 lg:p-8 my-6 max-w-screen-lg mx-auto">
