@@ -37,7 +37,7 @@ function SignUp() {
     const validateErrors = validate();
     if (Object.keys(validateErrors).length === 0) {
       try {
-        const res = await axios.post('http://localhost:8001/api/profiles', formData, {
+        const res = await axios.post('https://notenest-backend-jjzu.onrender.com/api/profiles', formData, {
           headers: {
             'Content-Type': 'application/json',
           },

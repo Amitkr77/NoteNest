@@ -13,7 +13,7 @@ function Form() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8001/api/workitems",
+        "https://notenest-backend-jjzu.onrender.com/api/workitems",
         { title, description },
         {
           headers: {
@@ -34,7 +34,7 @@ function Form() {
   const handleClear = async () => {
     if (window.confirm("Are you sure you want to clear all items?")) {
       try {
-        await axios.delete("http://localhost:8001/api/workitems/deleteAll");
+        await axios.delete("https://notenest-backend-jjzu.onrender.com/api/workitems/deleteAll");
         console.log("All items deleted successfully");
       } catch (error) {
         console.error("Error in deleting items:", error);

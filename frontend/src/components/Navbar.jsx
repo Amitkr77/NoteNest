@@ -33,7 +33,7 @@ export default function Navbar() {
             className="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition duration-150 ease-in-out"
           >
             <img
-              src="https://via.placeholder.com/32" // Replace with actual profile image URL
+              src="https://via.placeholder.com/32" 
               alt="Profile"
               className="w-8 h-8 rounded-full border border-gray-500"
             />
