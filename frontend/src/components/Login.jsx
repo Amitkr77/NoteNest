@@ -35,7 +35,7 @@ const Login = () => {
     if (Object.keys(errors).length === 0) {
       try {
         const response = await axios.post(
-          "https://notenest-backend-jjzu.onrender.com/api/profiles/login",
+          "https://notenest-backend-3j7p.onrender.com/api/profiles/login",
           logindata
         );
         alert("Login successful");

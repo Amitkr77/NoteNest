@@ -26,7 +26,7 @@ export default function WorkBook() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://notenest-backend-jjzu.onrender.com/api/workitems");
+        const res = await axios.get("https://notenest-backend-3j7p.onrender.com/api/workitems");
         console.log(res.data); 
         if (Array.isArray(res.data)) {
           setWorkData(res.data);
@@ -46,7 +46,7 @@ export default function WorkBook() {
   // Function to handle delete action
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://notenest-backend-jjzu.onrender.com/api/workitems/delete/${id}`);
+      await axios.delete(`https://notenest-backend-3j7p.onrender.com/api/workitems/delete/${id}`);
       setWorkData((prevData) => prevData.filter((item) => item._id !== id));
     } catch (error) {
       console.error("Error in deleting work item", error);
@@ -65,12 +65,12 @@ export default function WorkBook() {
     try {
       // Update the work item
       await axios.patch(
-        `https://notenest-backend-jjzu.onrender.com/api/workitems/update/${updatedItem._id}`,
+        `https://notenest-backend-3j7p.onrender.com/api/workitems/update/${updatedItem._id}`,
         updatedItem
       );
 
       // Fetch the updated list of work items
-      const { data } = await axios.get("https://notenest-backend-jjzu.onrender.com/api/workitems");
+      const { data } = await axios.get("https://notenest-backend-3j7p.onrender.com/api/workitems");
       setWorkData(data);
 
       // Close the modal after a successful update

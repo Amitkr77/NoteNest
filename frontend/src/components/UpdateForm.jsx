@@ -17,7 +17,7 @@ export default function UpdateForm({ isOpen, modalClose, selectedItem }) {
     try {
       // Replace the URL with your actual endpoint
       const response = await axios.patch(
-        `https://notenest-backend-jjzu.onrender.com/api/workitems/update/${selectedItem._id}`,
+        `https://notenest-backend-3j7p.onrender.com/api/workitems/update/${selectedItem._id}`,
         {
           title,
           description,
