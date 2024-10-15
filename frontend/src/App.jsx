@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import WorkPage from "./pages/workPage";
+import WorkPage from "./pages/WorkPage";
 import Login from "./components/Login";
 import SignUp from "./components/SingUp";
 
